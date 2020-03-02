@@ -1,7 +1,10 @@
 const express = require('express')
 const Datastore = require('nedb-promise')
+const cors = require('cors')
 const insults = new Datastore({filename:'insults.db', autoload:true})
+
 const app = express()
+app.use(cors())
 
 // app.get('/hello', (req,res) => {
 //     res.send({ hello: 'world' });
